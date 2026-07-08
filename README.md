@@ -22,7 +22,7 @@
 | 大模型 | DeepSeek (LangChain + LangGraph) | AI 对话与工具调用 |
 | 地理编码 | 高德地图 API | 地名 → 坐标 / 行政区边界 |
 | 实时通信 | MQTT + WebSocket | 无人机遥测数据 |
-| 数据库 | MySQL | — |
+| 数据库 | PostgreSQL | 从 config.ini 读取连接信息 |
 
 ---
 
