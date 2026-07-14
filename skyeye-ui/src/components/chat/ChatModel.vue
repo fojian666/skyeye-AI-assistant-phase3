@@ -141,7 +141,7 @@
               :disabled="!input.trim()"
               @click="send"
               title="发送">
-              <span class="send-icon-shell"><i class="el-icon-position"></i></span>
+              <i class="el-icon-position"></i>
             </button>
           </div>
         </div>
@@ -1774,29 +1774,10 @@ export default {
     box-shadow 0.3s ease;
   flex-shrink: 0;
 
-  .send-icon-shell {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    transition:
-      transform 0.35s cubic-bezier(0.32, 0.72, 0, 1),
-      background 0.25s ease;
-  }
-
   &:hover:not(:disabled) {
     transform: scale(1.06);
     background: linear-gradient(135deg, #4f8bf9, #3070f0);
     box-shadow: 0 4px 20px rgba(59, 130, 246, 0.35);
-
-    .send-icon-shell {
-      transform: translate(2px, -2px) scale(1.1);
-      background: rgba(255, 255, 255, 0.28);
-    }
   }
 
   &:active:not(:disabled) {
