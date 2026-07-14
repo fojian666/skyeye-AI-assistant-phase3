@@ -1061,18 +1061,17 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     font-size: 24px;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.4), rgba(37, 99, 235, 0.25));
+    background: rgba(59, 130, 246, 0.18);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(59, 130, 246, 0.45);
+    border: 1px solid rgba(59, 130, 246, 0.35);
     color: rgba(200, 220, 255, 0.9);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 2;
 
     &:hover {
-      background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(37, 99, 235, 0.3));
-      border-color: rgba(59, 130, 246, 0.6);
-      box-shadow: 0 0 24px rgba(59, 130, 246, 0.35);
+      background: rgba(59, 130, 246, 0.28);
+      border-color: rgba(59, 130, 246, 0.55);
     }
   }
 
@@ -1081,12 +1080,12 @@ export default {
     width: 36px;
     height: 36px;
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     opacity: 0;
     transform: scale(0);
     transition:
@@ -1094,14 +1093,12 @@ export default {
       transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
       background 0.25s ease,
       border-color 0.25s ease,
-      color 0.25s ease,
-      box-shadow 0.25s ease;
+      color 0.25s ease;
 
     &:hover {
-      background: rgba(255, 255, 255, 0.28);
-      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.35);
       color: #fff;
-      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 18px rgba(100, 180, 255, 0.3);
     }
   }
 }
@@ -1157,23 +1154,19 @@ export default {
   position: relative;
   box-sizing: border-box;
   border-radius: 20px;
-  background: rgba(12, 20, 40, 0.72);
-  backdrop-filter: blur(24px) saturate(1.2);
-  -webkit-backdrop-filter: blur(24px) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  background: rgba(8, 14, 28, 0.82);
+  backdrop-filter: blur(20px) saturate(1);
+  -webkit-backdrop-filter: blur(20px) saturate(1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transform-origin: bottom right;
   will-change: transform, opacity;
   transition: height 0.3s ease, border-radius 0.3s ease,
-    border-color 0.35s 0.2s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.45s 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.4s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .chat-panel.docked {
@@ -1186,20 +1179,8 @@ export default {
 
 /* 数据查询模式 */
 .chat-wrapper.query-mode .chat-panel {
-  border-color: rgba(239, 68, 68, 0.35);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(255, 100, 80, 0.12) inset,
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 0 32px rgba(239, 68, 68, 0.08);
-  transition: border-color 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.45s 0.05s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: query-glow-in 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-@keyframes query-glow-in {
-  0%   { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 100, 80, 0) inset, 0 0 0px rgba(239, 68, 68, 0); }
-  60%  { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 100, 80, 0.3) inset, 0 0 48px rgba(239, 68, 68, 0.18); }
-  100% { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 100, 80, 0.12) inset, 0 0 32px rgba(239, 68, 68, 0.08); }
+  border-color: rgba(239, 68, 68, 0.3);
+  transition: border-color 0.3s ease;
 }
 .chat-wrapper.query-mode .chat-header {
   background: rgba(239, 68, 68, 0.08);
@@ -1226,20 +1207,8 @@ export default {
 
 /* 智能摘要模式 — 琥珀/金色 */
 .chat-wrapper.summary-mode .chat-panel {
-  border-color: rgba(245, 158, 11, 0.35);
-  box-shadow:
-    0 24px 64px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(251, 191, 36, 0.12) inset,
-    0 1px 0 rgba(255, 255, 255, 0.06) inset,
-    0 0 32px rgba(245, 158, 11, 0.08);
-  transition: border-color 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
-    box-shadow 0.45s 0.05s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: summary-glow-in 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-}
-@keyframes summary-glow-in {
-  0%   { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(251, 191, 36, 0) inset, 0 0 0px rgba(245, 158, 11, 0); }
-  60%  { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(251, 191, 36, 0.3) inset, 0 0 48px rgba(245, 158, 11, 0.18); }
-  100% { box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(251, 191, 36, 0.12) inset, 0 0 32px rgba(245, 158, 11, 0.08); }
+  border-color: rgba(245, 158, 11, 0.3);
+  transition: border-color 0.3s ease;
 }
 .chat-wrapper.summary-mode .chat-header {
   background: rgba(245, 158, 11, 0.08);
@@ -1264,60 +1233,48 @@ export default {
   &:hover:not(:disabled) { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
 }
 
-/* —— 聊天区域模式底色 —— */
-.chat-wrapper.query-mode .chat-body {
-  background: radial-gradient(ellipse at 50% 0%, rgba(239, 68, 68, 0.05) 0%, transparent 60%);
-}
-.chat-wrapper.summary-mode .chat-body {
-  background: radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.05) 0%, transparent 60%);
-}
-
 /* —— 侧边栏模式色 —— */
 /* 查询模式 */
 .chat-wrapper.query-mode .rail-item.large {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.45), rgba(220, 38, 38, 0.3));
-  border-color: rgba(239, 68, 68, 0.5);
-  color: rgba(255, 220, 210, 0.95);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(239, 68, 68, 0.25);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(239, 68, 68, 0.18);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: rgba(255, 180, 170, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   &:hover {
-    background: linear-gradient(135deg, rgba(239, 68, 68, 0.55), rgba(220, 38, 38, 0.35));
-    border-color: rgba(239, 68, 68, 0.65);
-    box-shadow: 0 0 24px rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.28);
+    border-color: rgba(239, 68, 68, 0.55);
   }
 }
 .chat-wrapper.query-mode .rail-item.small {
-  border-color: rgba(239, 68, 68, 0.25);
-  color: rgba(255, 180, 160, 0.8);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: rgba(255, 160, 140, 0.7);
+  transition: all 0.3s ease;
   &:hover {
-    border-color: rgba(239, 68, 68, 0.5);
+    border-color: rgba(239, 68, 68, 0.45);
     color: #fff;
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 18px rgba(239, 68, 68, 0.3);
   }
 }
 
 /* 摘要模式 */
 .chat-wrapper.summary-mode .rail-item.large {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.45), rgba(217, 119, 6, 0.3));
-  border-color: rgba(245, 158, 11, 0.5);
-  color: rgba(255, 240, 200, 0.95);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 0 20px rgba(245, 158, 11, 0.25);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: rgba(255, 220, 160, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   &:hover {
-    background: linear-gradient(135deg, rgba(245, 158, 11, 0.55), rgba(217, 119, 6, 0.35));
-    border-color: rgba(245, 158, 11, 0.65);
-    box-shadow: 0 0 24px rgba(245, 158, 11, 0.4);
+    background: rgba(245, 158, 11, 0.28);
+    border-color: rgba(245, 158, 11, 0.55);
   }
 }
 .chat-wrapper.summary-mode .rail-item.small {
-  border-color: rgba(245, 158, 11, 0.25);
-  color: rgba(255, 220, 160, 0.8);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: rgba(245, 158, 11, 0.2);
+  color: rgba(255, 200, 120, 0.7);
+  transition: all 0.3s ease;
   &:hover {
-    border-color: rgba(245, 158, 11, 0.5);
+    border-color: rgba(245, 158, 11, 0.45);
     color: #fff;
-    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 18px rgba(245, 158, 11, 0.3);
   }
 }
 
@@ -1679,8 +1636,8 @@ export default {
 
 /* 面板脉冲呼吸光环 */
 .chat-panel.thinking-glow {
-  border-color: rgba(0, 243, 255, 0.25);
-  animation: breathe-glow 2.2s ease-in-out infinite;
+  border-color: rgba(0, 243, 255, 0.2);
+  animation: breathe-glow 3s ease-in-out infinite;
 }
 
 .chat-panel.thinking-glow::after {
@@ -1690,41 +1647,29 @@ export default {
   border-radius: 22px;
   pointer-events: none;
   z-index: -1;
-  animation: breathe-ring 2.2s ease-in-out infinite, rainbow-glow 1.5s linear infinite;
+  animation: breathe-ring 3s ease-in-out infinite;
 }
 
 @keyframes breathe-glow {
   0%, 100% {
-    box-shadow:
-      0 24px 64px rgba(0, 0, 0, 0.45),
-      0 0 20px rgba(0, 243, 255, 0.06),
-      0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-      0 1px 0 rgba(255, 255, 255, 0.06) inset;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
   }
   50% {
     box-shadow:
-      0 24px 64px rgba(0, 0, 0, 0.45),
-      0 0 40px rgba(0, 243, 255, 0.18),
-      0 0 80px rgba(0, 243, 255, 0.1),
-      0 0 0 1px rgba(255, 255, 255, 0.08) inset,
-      0 1px 0 rgba(255, 255, 255, 0.1) inset;
+      0 16px 48px rgba(0, 0, 0, 0.5),
+      0 0 40px rgba(0, 243, 255, 0.08);
   }
 }
 
 @keyframes breathe-ring {
   0%, 100% {
-    box-shadow: 0 0 12px rgba(0, 243, 255, 0.08), 0 0 30px rgba(0, 243, 255, 0.04);
-    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.05);
+    opacity: 0.5;
   }
   50% {
-    box-shadow: 0 0 24px rgba(0, 243, 255, 0.2), 0 0 60px rgba(0, 243, 255, 0.1);
-    opacity: 1;
+    box-shadow: 0 0 16px rgba(0, 243, 255, 0.12);
+    opacity: 0.8;
   }
-}
-
-@keyframes rainbow-glow {
-  0%   { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
 }
 
 /* 输入区 */
@@ -1982,7 +1927,7 @@ export default {
   animation: breathe-glow-light 2.2s ease-in-out infinite;
 }
 .theme-light .chat-panel.thinking-glow::after {
-  animation: breathe-ring-light 2.2s ease-in-out infinite, rainbow-glow 1.5s linear infinite;
+  animation: breathe-ring-light 3s ease-in-out infinite;
 }
 .theme-light .chat-header {
   border-bottom-color: rgba(0, 0, 0, 0.05);
@@ -2171,15 +2116,6 @@ export default {
 .reduce-motion .phase-text {
   animation: none;
   opacity: 1;
-}
-/* glow-in 动画加速 */
-.reduce-motion .query-mode .chat-panel {
-  animation: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-.reduce-motion .summary-mode .chat-panel {
-  animation: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 /* footer/header 过渡加速 */
 .reduce-motion .chat-footer,
